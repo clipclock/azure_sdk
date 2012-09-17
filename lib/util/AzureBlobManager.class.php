@@ -99,14 +99,14 @@ class AzureBlobManager {
 
 	public function putFile($container_name, $blob_name, $file_path, $retry = 0)
 	{
-		# About naming and other
+		# About naming and other    
 		# http://msdn.microsoft.com/en-us/library/windowsazure/dd135715.aspx
 
 		$result = $this->createContainerNX($container_name);
 
 		try {
-			//$content = fopen($file_path, "r");
-			$content = file_get_contents($file_path); //<--avaible
+			$content = fopen($file_path, "r");
+			//$content = file_get_contents($file_path); //<--avaible
 
 			$mime_typer = new FileMimeType();
 
